@@ -3,7 +3,7 @@ import { BaseHttpError } from '../exceptions/BaseHttpError';
 import HttpException from '../exceptions/http_exception';
 import logger from "../logger";
 
-const loggerInstance = logger.child({ label: 'ErrorHandlerMiddleware' });
+const loggerInstance = logger.child({ label: 'ErrorHandlerMiddleware.ts' });
 
 export const ErrorHandlerMiddleware = (error: BaseHttpError, request: NextRequest): Response => {
     // Default values
