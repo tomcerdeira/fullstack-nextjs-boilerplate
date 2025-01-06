@@ -8,9 +8,13 @@ class ExampleRoutes extends Route {
     }
 
     protected initializeRoutes(): void {
-        this.get('/', exampleController.sampleMethod);
-        this.get('/test', exampleController.sampleMethod2);
-        this.post('/post', exampleController.sampleMethod);
+        this.get('/', exampleController.getExample);
+        this.post('/', exampleController.postExample);
+
+        this.get('/query?[query!]', exampleController.sampleMethodWithPathOrQueryParam);
+
+                    //TODO: podre tipar esto?
+        this.get('/:id', exampleController.sampleMethodWithPathOrQueryParam);
     }
 }
 

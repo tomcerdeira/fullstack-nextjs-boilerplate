@@ -18,6 +18,15 @@ export class ApiResponse {
   }
 
   public toResponse(requestId?: string): Response {
+    if(this.status === StatusCodes.NO_CONTENT) {
+      return new Response(null, {
+        status: this.status,
+        headers: {
+          ...this.headers,
+          ...(requestId && { 'X-Req-Id': requestId })
+        }
+      });
+    }
     const responseBody = typeof this.data === 'object' && this.data !== null
       ? { ...this.data }
       : {
