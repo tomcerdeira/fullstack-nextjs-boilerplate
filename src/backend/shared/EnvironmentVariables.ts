@@ -14,6 +14,7 @@ export class EnvironmentVariables {
                 username: process.env.POSTGRES_USER || 'postgres',
                 password: process.env.POSTGRES_PASSWORD || 'postgres',
                 database: process.env.POSTGRES_DB || 'database',
+                database: process.env.POSTGRES_DB || 'fullstack-nextjs-boilerplate',
             },
             mongodb_database: {
                 collection_name: process.env.MONGODB_COLLECTION_NAME || 'collection',
