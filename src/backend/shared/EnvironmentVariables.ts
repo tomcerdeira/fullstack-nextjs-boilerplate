@@ -17,9 +17,12 @@ export class EnvironmentVariables {
                 database: process.env.POSTGRES_DB || 'fullstack-nextjs-boilerplate',
             },
             mongodb_database: {
-                collection_name: process.env.MONGODB_COLLECTION_NAME || 'collection',
                 connection_string: process.env.MONGODB_CONNECTION_STRING || 'mongodb://localhost:27017',
-                database_name: process.env.MONGODB_DATABASE_NAME || 'database',
+                host: process.env.MONGODB_HOST || 'localhost',
+                port: Number(process.env.MONGODB_PORT) || 27017,
+                username: process.env.MONGODB_USERNAME || 'root',
+                password: process.env.MONGODB_PASSWORD || 'example',
+                database: process.env.MONGODB_DATABASE_NAME || 'database',
             },
             auth: {
                 token_expiration_time: process.env.TOKEN_EXPIRATION_TIME || '7d',
